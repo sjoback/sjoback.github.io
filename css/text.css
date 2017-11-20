@@ -1,0 +1,278 @@
+p {
+   /*background-color: black;*/
+   background: rgba(0, 0, 0, 0.9);
+   color: white;
+   display: inline;
+   padding-left: 5px;
+   padding-right: 5px;
+   /*font-family: Muli;*/
+   font-style: normal;
+   font-variant: normal;
+}
+
+
+.big-text {
+   /*font-family: tahoma;*/
+   font-size: 40px;
+   margin-top: -5px;
+   padding-left: -5px;
+   padding-right: 15px;
+}
+
+
+.small-text {
+   color: black;
+   margin-top: -7px;
+   padding-left: 20px;
+   font-size: 32px;
+}
+
+
+/* SECTION 1 */
+.text-box1 {
+   position: absolute;
+   top: 49%;
+   left: 49%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   float: center;
+}
+.big-text1 {
+   color: black;
+   margin-top: 4px;
+   padding-left: 20px;
+   font-size: 38px;
+}
+
+
+/* SECTION 2 */
+.small-text2 {
+   color: black;
+   margin-top: -7px;
+   padding-left: 20px;
+   font-size: 33px;
+}
+.text-box2 {
+   position: absolute;
+   top: 38%;
+   left: 6%;
+}
+.big-text2 {
+   color: black;
+   margin-top: 4px;
+   padding-left: 20px;
+   font-size: 45px;
+}
+
+
+/* SECTION 3 */
+.text-box3 {
+   position: absolute;
+   top: 45%;
+   right: 8%;
+}
+.small-text3 {
+   color: black;
+   margin-top: -7px;
+   padding-left: 20px;
+   font-size: 33px;
+}
+.big-text3 {
+   color: black;
+   margin-top: 4px;
+   padding-left: 20px;
+   font-size: 45px;
+}
+
+/* SECTION 5 */
+.big-text {
+   display: none;
+}
+
+.left-text {
+   position: relative;
+   top: 30%;
+   left: 5%;
+}
+.center-text {
+   text-align: center;
+   position: relative;
+   float: center;
+   left: 3%;
+   top: 29%;
+}
+.big-text5 {
+   color: black;
+   margin-top: 4px;
+   padding-left: 20px;
+   font-size: 25px;
+}
+.right-text {
+   float: right;
+   text-align: center;
+   position: relative;
+   left: 10%;
+   margin-right: 220px;
+   bottom: 16%;
+}
+.small-text5-center {
+   color: black;
+   margin-top: 50px;
+   padding-left: 595px;
+   font-size: 22px;
+   text-align: left;
+}
+.small-text5-left {
+   color: black;
+   margin-top: 50px;
+   padding-left: 5px;
+   font-size: 22px;
+   text-align: left;
+}
+.left-text {
+   position: absolute;
+   top: 30%;
+   left: 5%;
+}
+
+.shop-image {
+   height: 283px;
+   width: 354px;
+   background-image: url("../img/web/1.png");
+}
+
+
+
+/* IPHONE */
+@media only screen and (max-width: 500px) {
+   /* Section 1 */
+   .small-text1 {
+      color: black;
+      margin-top: -7px;
+      padding-left: 20px;
+      font-size: 28px;
+      padding-right:60px;
+   }
+   .text-box1 {
+      position: absolute;
+      top: 42%;
+      left: 48%;
+   }
+   .big-text1 {
+      color: black;
+      margin-top: 4px;
+      padding-left: 20px;
+      font-size: 25px;
+   }
+   /* Section 2 */
+   .small-text2 {
+      color: black;
+      margin-top: -7px;
+      padding-left: 20px;
+      font-size: 28px;
+      padding-right:60px;
+   }
+   .text-box2 {
+      position: absolute;
+      top: 33%;
+      left: 1%;
+   }
+   .big-text2 {
+      color: black;
+      margin-top: 4px;
+      padding-left: 20px;
+      font-size: 25px;
+   }
+   /* Section 3 */
+   .small-text3 {
+      color: black;
+      margin-top: -7px;
+      padding-left: 20px;
+      font-size: 36px;
+      padding-right:60px;
+   }
+   .text-box3 {
+      position: absolute;
+      top: 45%;
+      left: 1%;
+   }
+   .big-text3 {
+      color: black;
+      margin-top: 4px;
+      padding-left: 20px;
+      font-size: 25px;
+   }
+
+   /* SECTION 5 */
+   .big-text5 {
+      /*display: none;*/
+   }
+   .big-text {
+      display: none;
+      /*font-size: 20px;
+      margin-top: -5px;
+      padding-left: -5px;
+      padding-right: 15px;*/
+   }
+   .left-text {
+      position: relative;
+      top: 30%;
+      left: 5%;
+   }
+   .center-text {
+      text-align: center;
+      position: relative;
+      float: center;
+      left: 3%;
+      top: 29%;
+   }
+   .right-text {
+      float: right;
+      text-align: center;
+      position: relative;
+      left: 10%;
+      margin-right: 220px;
+      bottom: 16%;
+   }
+   .small-text5-center {
+      color: black;
+      margin-top: 15px;
+      padding-left: 20px;
+      font-size: 18px;
+   }
+   .small-text5-left {
+      color: black;
+      margin-left: 10px;
+      padding-left: 5px;
+      font-size: 18px;
+      width: 110%;
+      top: -400%;
+      position: absolute;
+   }
+   .left-text {
+      position: absolute;
+      top: 30%;
+      left: 5%;
+   }
+   .shop-image {
+      display: none;
+   }
+   .big-text-mobile {
+      width: 300px;
+      height: 30px;
+      color: white;
+      padding-top: 15px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      text-align: left;
+      font-size: 20px;
+      background-color: black;
+      margin-left: 20px;
+   }
+
+/* IPAD */
+@media only screen and (max-width: 1100px) {
+
+
+}
