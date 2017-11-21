@@ -48,6 +48,7 @@ body{
   margin-right: -50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  z-index: 3;
 }
 
 .section1-logo{
@@ -100,6 +101,7 @@ body{
   top: 30%;
   text-align: left;
   transition: 0.5s;
+  z-index: 3;
 }
 .section2-button{
   cursor: pointer;
