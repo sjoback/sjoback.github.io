@@ -5,6 +5,15 @@
  *
  * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
  */
+@media only screen and (min-width: 500px){
+  #fp-nav ul li:hover a span,
+  .fp-slidesNav ul li:hover a span{
+      width: 10px;
+      height: 10px;
+      margin: -5px 0px 0px -5px;
+  }
+}
+
 html.fp-enabled,
 .fp-enabled body {
     margin: 0;
