@@ -83,7 +83,11 @@
 
   }
   .s2-readMore h2 {
+<<<<<<< HEAD
     margin-top: -10%;
+=======
+    margin-top: -20%;
+>>>>>>> 60842b014a0b8fe2a791a3cb92d4ade6b82dd7a8
     text-align: left;
     font-size: 22px;
     margin-left: 15px;
@@ -111,7 +115,7 @@
     padding: 10px 5px 10px 5px;
     background: black;
     vertical-align: middle;
-    margin-top: 5%;
+    margin-top: 10%;
   }
   .s3-closebtn {
     width: 45px;
