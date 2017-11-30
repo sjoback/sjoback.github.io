@@ -16,19 +16,19 @@
 }
 @media only screen and (max-width: 500px){
   .slide1{
-    background-image: url("../resources/slideshow/mobile1.png");
+    background-image: url("../resources/slideshow/m1.jpg");
     background-size: 100% 100%;
   }
   .slide2{
-    background-image: url("../resources/slideshow/mobile2.png");
+    background-image: url("../resources/slideshow/m2.jpg");
     background-size: 100% 100%;
   }
   .slide3{
-    background-image: url("../resources/slideshow/mobile3.png");
+    background-image: url("../resources/slideshow/m3.jpg");
     background-size: 100% 100%;
   }
   .slide4{
-    background-image: url("../resources/slideshow/mobile4.png");
+    background-image: url("../resources/slideshow/m4.jpg");
     background-size: 100% 100%;
   }
 }

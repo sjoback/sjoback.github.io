@@ -54,7 +54,11 @@
     padding: 10px 5px 10px 5px;
     background: black;
     vertical-align: middle;
+<<<<<<< HEAD:thrive/css/mediaQ.css
     margin-top: 15%;
+=======
+    margin-top: 25%;
+>>>>>>> 5cb55f936256f6592ca4d79f2725c9ae8742b73e:css/mediaQ.css
     margin-bottom: 3%;
   }
    .s2-closebtn {
@@ -83,7 +87,7 @@
 
   }
   .s2-readMore h2 {
-    margin-top: -20%;
+    margin-top: 5%;
     text-align: left;
     font-size: 22px;
     margin-left: 15px;
@@ -148,6 +152,6 @@
     background-size: cover;
   }
   .section5{
-    background-image: url("../resources/mobile/5text.png");
+    background-image: url("../resources/mobile/lastpage.jpg");
   }
 }
