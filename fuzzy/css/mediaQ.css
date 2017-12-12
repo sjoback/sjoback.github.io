@@ -27,8 +27,9 @@
    	width: 93px;
    }
    .play-menu {
-   	height: 370px;
-   	width: 400px;
+   	height: 390px;
+   	width: 350px;
+      padding: 20px;
    }
    .end-menu {
    	height: 420px;
@@ -41,9 +42,9 @@
    	margin-top: 40px;
    }
    #menu {
-   	position: absolute;
-   	top: 60%;
-   	left: 67%;
+   	position: fixed;
+   	top: 40%;
+   	right: 50%;
    	margin-right: -50%;
    	transform: translate(-50%, -50%);
    	background: rgba(0, 0, 0, 0.8);
@@ -60,22 +61,23 @@
    	width: 500px;
    }
    div#memory-board{
+      position: fixed;
    	width: 450px;
-   	height:600px;
+   	height:500px;
    	padding: 5px;
-   	top: 60%;
-   	left: 66%;
+   	top: 40%;
+   	left: 50%;
    }
    div#memory-board > div{
    	width:58px;
-   	height:96px;
+   	height:71px;
    	padding:20px;
    	font-size:64px;
    }
    .hurry-up {
-   	position: absolute;
-      top: 7%;
-   	left: 66%;
+   	position: fixed;
+      top: 5%;
+   	left: 50%;
    	margin-right: -50%;
    	transform: translate(-50%, -50%);
    }
@@ -85,6 +87,9 @@
        opacity: 0.1;
    	 color: white;
     	font-size: 52px;
+   }
+   .play {
+      margin-bottom: 20px;
    }
 
 }
