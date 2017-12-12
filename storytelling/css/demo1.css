@@ -1,0 +1,201 @@
+* {
+	font-family: comic sans;
+}
+@font-face {
+	font-family: 'arrows';
+	src:url('../fonts/arrows/arrows.eot');
+	src:url('../fonts/arrows/arrows.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/arrows/arrows.woff') format('woff'),
+		url('../fonts/arrows/arrows.ttf') format('truetype'),
+		url('../fonts/arrows/arrows.svg#arrows') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.bb-custom-wrapper {
+	width: 100%;
+	position: relative;
+	margin: 0;
+	text-align: center;
+}
+
+.bb-custom-wrapper .bb-bookblock {
+	box-shadow: 0 12px 20px -10px rgba(81,64,49,0.6);
+}
+
+.bb-custom-wrapper h3 {
+	font-size: 1.4em;
+	font-weight: 300;
+	margin: 0.4em 0 1em;
+}
+
+.bb-custom-wrapper nav {
+	width: 100%;
+	height: 30px;
+	margin: 1em 0%;
+	position: relative;
+	z-index: 0;
+	text-align: center;
+}
+
+.bb-custom-wrapper nav a {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	border-radius: 2px;
+	background: #72b890;
+	color: #fff;
+	font-size: 0;
+	margin: 2px;
+}
+
+.bb-custom-wrapper nav a:hover {
+	opacity: 0.6;
+}
+
+.bb-custom-icon:before {
+	font-family: 'arrows';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	font-size: 20px;
+	line-height: 30px;
+	display: block;
+	-webkit-font-smoothing: antialiased;
+}
+
+.bb-custom-icon-first:before,
+.bb-custom-icon-last:before {
+	content: "\e002";
+}
+
+.bb-custom-icon-arrow-left:before,
+.bb-custom-icon-arrow-right:before {
+	content: "\e003";
+}
+
+.bb-custom-icon-arrow-left:before,
+.bb-custom-icon-first:before {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+/* No JS */
+.no-js .bb-custom-wrapper {
+	height: auto;
+}
+
+.no-js .bb-custom-content {
+	height: 470px;
+}
+
+.fixedsize {
+	width: 100%;
+	height: 100%;
+}
+
+.bb-custom-wrapper nav a {
+	cursor: pointer;
+}
+.img2 {
+	display: none;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .bb-bookblock {
+			width: 100%;
+			height: 530px;
+		}
+		.main {
+			padding: 0;
+		}
+		.bb-custom-wrapper nav a {
+			height: 60px;
+			width: 60px;
+		}
+		.bb-custom-icon-arrow-left:before, .bb-custom-icon-arrow-right:before {
+			zoom: 150%;
+		}
+		.bb-custom-icon-first:before, .bb-custom-icon-last:before {
+			zoom:150%;
+		}
+		.bb-custom-wrapper nav {
+			margin: 2em 0%;
+		}
+		.img1 {
+			display: none;
+		}
+		.img2 {
+			display: block;
+		}
+		.bb-custom-icon:before {
+			line-height: 40px;
+		}
+  .waterpuddle {
+    top: 60%;
+    left: 30%;
+  }
+  .small {
+    bottom: 45%;
+    left:10px;
+  }
+  .medium {
+    bottom: 46%;
+    left:25px;
+  }
+  .big {
+left: 13%;
+bottom: 49%;
+  }
+  .chatbubblebig {
+bottom: 40%;
+left: -7%;
+  }
+  .table {
+left: 20%;
+
+  }
+  .fishSkeleton {
+left: 16%;
+  }
+  .jug {
+left: 40%;
+  }
+  .fishbowl {
+left: 10%;
+  }
+  .brokenVase {
+left: 50%;
+  }
+  .staticTable {
+		content: url(../images/animation/statictableiphone.png)
+    width: 200px;
+    height: 200px;
+    left: 46.8%;
+  }
+  .cabinet {
+    width: 300px;
+    top: 20%;
+    left: 11%;
+  }
+  .cabinet2 {
+    width: 300px;
+    top: 20%;
+    left: 11%;
+  }
+  .vase {
+top: 55%;
+  }
+  .cat {
+bottom: 5%;
+  }
+  .lastpagefix {
+    font-size: 14px;
+  }
+}
