@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>setMemory = null</title>
+	<link type="text/css" rel="stylesheet" href="css/styles.css">
+	<link type="text/css" rel="stylesheet" href="css/mediaQ.css">
+	<link rel="icon" type="image/gif/png" href="img/pacman.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
+<body>
+<audio id="myAudio" src="song.mp3" preload="auto"></audio>
+<div class="sound-btn opacity">
+	<button class="sound opacity" onClick="togglePlay()"></button>
+	<!-- <button class="sound opacity"></button> -->
+</div>
+
+<div class="hurry-up opacity"><p class="pulsate">HURRY UP!</p></div>
+
+
+	<div class="overlay"></div>
+	<p class="time opacity">40</p>
+
+	<div class="play-menu z-index" id="menu">
+		<h3>Game instructions:</h3>
+		<br>
+		Flip the tiles and get two alike.<br>Complete the board within 40 seconds or suffer the consequences.
+		<br>
+		<br>
+		<br>
+		OK. Got it!<br>I'm ready.
+		<br>
+		<br>
+		<button class="play btn">Play</button>
+	</div>
+
+	<div class="end-menu opacity" id="menu">
+		<h3>Congratulations!</h3>
+		<br>
+		<br>
+		You should be proud.
+		<br>
+		You finished this incredibly hard game with:
+		<br>
+		<p class="time1"></p> second(s) left.
+		<br>
+		<button class="replay btn">Play again</button>
+
+		<br>
+		<button class="exit btn"><a href="https://www.youtube.com/watch?v=u2X7GCUhZJs">I'm done.</a></button>
+	</div>
+
+	<div class="time-menu opacity" id="menu">
+		<h3>You ran out of time.</h3> <br>Really, you should be ashamed of yourself.
+		<br>
+		<br>
+		<button class="tryAgain btn">Try again</button>
+
+		<br>
+		<br>
+
+
+
+	</div>
+
+	<div id="memory-board" class="opacity"></div>
+	<!-- <script>newBoard();</script> -->
+	<script src="js/functions.js"></script>
+
+</body>
+</html>
