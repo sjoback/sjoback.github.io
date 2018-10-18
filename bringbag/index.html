@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Bringbag - Say Hello to the lifestyle!</title>
+   <link rel="stylesheet" type="text/css" href="./assets/styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+   <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+   <div class="logo">
+      <a href="index.html" class="name-logo"><h5>BRINGBAG</h5></a>
+   </div>
+
+
+
+
+   <div class="hamburger-menu">
+      <div class="burger-circle">
+         <div class="burger-icon" id="burger"  onclick="burger(this)" @click="show = !show">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+         </div>
+      </div>
+
+
+      <transition name="slide-in-right">
+      <div class="push-out-menu" v-if="show">
+         <ul class="menu-2">
+            <li><a class="underline" href="pages/product.html">Bringbag</a></li>
+            <li><a class="underline" href="pages/shop.html">Butik</a></li>
+            <li><a class="underline" href="pages/about.html">Om företaget Bringbag</a></li>
+            <li><a class="underline" href="pages/faq.html">FAQ - Vanliga frågor?</a></li>
+            <li><a class="underline" href="pages/contact.html">Kontakta oss</a></li>
+         </ul>
+      </div>
+      </transition>
+      <transition name="fade-in">
+         <div class="push-out-menu-dimmer" v-if="show"></div>
+      </transition>
+   </div>
+
+   <div class="front-img-slider">
+      <div class="front-img-slider-dimmer"></div>
+   </div>
+   <a href="pages/butik.html"><button class="to-store-button"><h5>Till butik</h5></button></a>
+
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+var aboutUs = new Vue({
+   el: '.hamburger-menu',
+   data: {
+      show: false
+   }
+});
+
+
+</script>
+<script src="../assets/js/jquery.js"></script>
+</body>
+</html>

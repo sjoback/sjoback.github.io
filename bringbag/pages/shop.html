@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Bringbag - Say Hello to the lifestyle!</title>
+   <link rel="stylesheet" type="text/css" href="../assets/styles/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+   <div class="logo">
+      <a href="/" class="name-logo"><h5>BRINGBAG</h5></a>
+   </div>
+
+   <div class="hamburger-menu">
+      <div class="burger-circle">
+         <div class="burger-icon" id="burger"  onclick="burger(this)" @click="show = !show">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+         </div>
+      </div>
+      <transition name="slide-in-right">
+         <div class="push-out-menu" v-if="show">
+            <ul class="menu-2">
+               <li><a href="./product.html">Bringbag</a></li>
+               <li><a href="./shop.html">Butik</a></li>
+               <li><a href="./about.html">Om företaget Bringbag</a></li>
+               <li><a href="./faq.html">FAQ - Vanliga frågor?</a></li>
+               <li><a href="./contact.html">Kontakta oss</a></li>
+            </ul>
+         </div>
+      </transition>
+      <transition name="fade-in">
+         <div class="push-out-menu-dimmer" @click="show = !show" v-if="show"></div>
+      </transition>
+   </div>
+
+
+   <div class="shop-container">
+
+      <div class="img-gallery">
+         <div class="mySlides">
+            <img src="../assets/images/slideshow-imgs/1.jpeg">
+         </div>
+         <div class="mySlides">
+            <img src="../assets/images/slideshow-imgs/2.jpeg">
+         </div>
+         <div class="mySlides">
+            <img src="../assets/images/slideshow-imgs/3.jpeg">
+         </div>
+         <div class="mySlides">
+            <img src="../assets/images/slideshow-imgs/4.jpeg">
+         </div>
+         <div class="mySlides">
+            <img src="img_nature_wide.jpg">
+         </div>
+         <div class="mySlides">
+            <img src="img_snow_wide.jpg">
+         </div>
+
+         <div class="row">
+            <div class="column">
+               <img class="img-slide" src="../assets/images/slideshow-imgs/1.jpeg" onclick="currentSlide(1)">
+            </div>
+            <div class="column">
+               <img class="img-slide" src="../assets/images/slideshow-imgs/2.jpeg" onclick="currentSlide(2)">
+            </div>
+            <div class="column">
+               <img class="img-slide" src="../assets/images/slideshow-imgs/3.jpeg" onclick="currentSlide(3)">
+            </div>
+            <div class="column">
+               <img class="img-slide" src="../assets/images/slideshow-imgs/4.jpeg" onclick="currentSlide(4)">
+            </div>
+         </div>
+      </div>
+
+<div class="wrapper product-info">
+   <div class="product-header">
+      <h6 class="product-name">Bringbag Modell X-FTP90</h6>
+      <h6 class="product-price">999 :-</h6>
+   </div>
+
+
+   <div class="child vue-color">
+      <div class="color-dropdown" @click="dropdown = !dropdown" v-if="!dropdown">
+         <p>Välj färg</p>
+         <img src="../assets/images/icons/downarrow.png" class="color-arrow" alt="" v-if="!dropdown">
+      </div>
+      <div class="color-dropdown font-black" @click="dropdown = !dropdown" v-if="dropdown">
+         <p>Välj färg</p>
+         <img src="../assets/images/icons/uparrow.png" class="color-arrow" alt="" v-if="dropdown">
+      </div>
+
+      <div class="color-dropdown-extended" v-if="dropdown" @click="dropdown = !dropdown">
+         <div class="color-black">Svart</div>
+         <div class="color-brown">Brun</div>
+         <div class="color-grey">Grå</div>
+      </div>
+   </div>
+
+   <div class="child">
+      <div class="add-to-cart-btn hover"><p><span>Lägg till i varukorg</span></p></div>
+      <div class="to-cart-btn hover"><p><span>Till kassan</span></p></div>
+   </div>
+
+   <div class="vue-prod prod-deliv-container">
+      <div class="product-description">
+         <div class="prod-title" v-if="p"><p>Produktbeskrivning</p></div>
+         <div class="prod-title faded-left" v-if="!p" @click="p = !p, d = !d, dx = !dx, px = !px"><p>Produktbeskrivning</p></div>
+         <div class="prod-extended" v-if="px"><p>Massa info om produkt. Massa info om produkt. Massa info om produkt. Massa info om produkt. Massa info om produkt. Massa info om produkt. </p></div>
+      </div>
+      <div class="delivery-info">
+         <div class="deliv-title" v-if="!d"><p>Leverans</p></div>
+         <div class="deliv-title faded-right" v-if="d" @click="d = !d, dx = !dx, p = !p, px = !px"><p>Leverans</p></div>
+         <div class="prod-extended" v-if="dx"><p>Massa info om leverans. Massa info om leverans. Massa info om leverans. Massa info om leverans. Massa info om leverans. Massa info om leverans. </p></div>
+      </div>
+   </div>
+</div>
+
+
+
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+var infoDelivery = new Vue({
+   el: '.vue-prod',
+   data: {
+      d: true,
+      p: true,
+      px: true,
+      dx: false,
+   }
+});
+
+var aboutUs = new Vue({
+   el: '.hamburger-menu',
+   data: {
+      show: false
+   }
+});
+
+var chooseColor = new Vue({
+   el: '.vue-color',
+   data: {
+      dropdown: false
+   }
+});
+
+
+</script>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+   showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+   showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+   var i;
+   var slides = document.getElementsByClassName("mySlides");
+   var dots = document.getElementsByClassName("img-slide");
+   var captionText = document.getElementById("caption");
+   if (n > slides.length) {slideIndex = 1}
+   if (n < 1) {slideIndex = slides.length}
+   for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+   }
+   for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+   }
+   slides[slideIndex-1].style.display = "block";
+   dots[slideIndex-1].className += " active";
+   captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+<script src="../assets/js/jquery.js"></script>
+
+</body>
+</html>
