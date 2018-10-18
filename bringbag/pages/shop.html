@@ -17,13 +17,13 @@
    </div>
 
    <div class="hamburger-menu">
-      <div class="burger-circle">
+
          <div class="burger-icon" id="burger"  onclick="burger(this)" @click="show = !show">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
          </div>
-      </div>
+
       <transition name="slide-in-right">
          <div class="push-out-menu" v-if="show">
             <ul class="menu-2">
@@ -41,8 +41,9 @@
    </div>
 
 
-   <div class="shop-container">
+   <div class="wrapper w100 shop-container">
 
+<div class="wrapper w50 padding-left5">
       <div class="img-gallery">
          <div class="mySlides">
             <img src="../assets/images/slideshow-imgs/1.jpeg">
@@ -62,29 +63,33 @@
          <div class="mySlides">
             <img src="img_snow_wide.jpg">
          </div>
+   </div>
 
-         <div class="row">
-            <div class="column">
-               <img class="img-slide" src="../assets/images/slideshow-imgs/1.jpeg" onclick="currentSlide(1)">
-            </div>
-            <div class="column">
-               <img class="img-slide" src="../assets/images/slideshow-imgs/2.jpeg" onclick="currentSlide(2)">
-            </div>
-            <div class="column">
-               <img class="img-slide" src="../assets/images/slideshow-imgs/3.jpeg" onclick="currentSlide(3)">
-            </div>
-            <div class="column">
-               <img class="img-slide" src="../assets/images/slideshow-imgs/4.jpeg" onclick="currentSlide(4)">
-            </div>
-         </div>
+   <div class="row">
+      <div class="column">
+         <img class="img-slide" src="../assets/images/slideshow-imgs/1.jpeg" onclick="currentSlide(1)">
       </div>
+      <div class="column">
+         <img class="img-slide" src="../assets/images/slideshow-imgs/2.jpeg" onclick="currentSlide(2)">
+      </div>
+      <div class="column">
+         <img class="img-slide" src="../assets/images/slideshow-imgs/3.jpeg" onclick="currentSlide(3)">
+      </div>
+      <div class="column">
+         <img class="img-slide" src="../assets/images/slideshow-imgs/4.jpeg" onclick="currentSlide(4)">
+      </div>
+   </div>
+</div>
 
-<div class="wrapper product-info">
+
+
+
+
+<div class="wrapper w40 product-info padding-right5">
    <div class="product-header">
       <h6 class="product-name">Bringbag Modell X-FTP90</h6>
       <h6 class="product-price">999 :-</h6>
    </div>
-
 
    <div class="child vue-color">
       <div class="color-dropdown" @click="dropdown = !dropdown" v-if="!dropdown">
@@ -97,9 +102,9 @@
       </div>
 
       <div class="color-dropdown-extended" v-if="dropdown" @click="dropdown = !dropdown">
-         <div class="color-black">Svart</div>
-         <div class="color-brown">Brun</div>
-         <div class="color-grey">Grå</div>
+         <div class="color-black"><p>Svart</p></div>
+         <div class="color-brown"><p>Brun</p></div>
+         <div class="color-grey"><p>Grå</p></div>
       </div>
    </div>
 
