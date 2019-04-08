@@ -54,7 +54,7 @@
                     <div class="bar" v-bind:class="{ active: q == 3, 'answered': hasAnswer('3') }">3</div>
                 </div>
 
-                <transition name="toggle">
+               <!-- <transition name="toggle">
                     <div class="question q1" v-if="q == 1">
                         <h2>Är det viktigare med mer fördelar på kortet än att kortet har låga avgifter?</h2>
                     </div>
@@ -70,24 +70,14 @@
                     <div class="question q2" v-if="q == 3">
                         <h2>Är det viktigt för dig med bra rabatter & bonus när du handlar mat?</h2>
                     </div>
-                </transition>
+                </transition>-->
 
                 <div class="btn-container">
 
                     <!-- Q1 -->
                     <!-- Fråga för att etablera förmån eller kredit -->
-                    <button class="y" v-if="q == 1" @click="q = 2, addAnswer('1', 'mastercard'), getAPI()">JA</button>
-                    <button class="n" v-if="q == 1" @click="q = 2, addAnswer('1', 'false')">NEJ</button>
-                    <!-- Q2 -->
-                    <!-- Fråga för att etablera resa eller ej -->
-                    <button class="y" v-if="q == 2" @click="q = 3,addAnswer('2', 'true')">JA</button>
-                    <button class="n" v-if="q == 2" @click="q = 3,addAnswer('2', 'false')">NEJ</button>
-                    <!-- Q3 -->
-                    <!-- Fråga för att etablera bonus eller ej -->
-                    <button class="y" v-if="q == 3" @click="q = undefined, addAnswer('3', 'true'), result = true, getAPI()">JA</button>
-                    <button class="n" v-if="q == 3" @click="q = undefined, addAnswer('3', 'false'), result = true, getAPI()">NEJ</button>
-                    <!-- Q4 -->
-                    <!-- Q5 -->
+                    <button class="y" v-if="q == 1" @click="q = 2, addAnswer('1', 'mastercard'), getAPI()">Show API</button>
+                  
                 </div>
 
                 <div class="re-do" @mouseover="re = true" @mouseleave="re = false">
