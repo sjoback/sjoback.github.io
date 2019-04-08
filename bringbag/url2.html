@@ -170,7 +170,7 @@ var app = new Vue({
                 if(bottomOfWindow) {
                     const url = 'https://api.jsonbin.io/b/5cab36508b8d1301a25bd8fa/1/';
                     const url2 = 'https://randomuser.me/api/';
-                    axios.get(url2)
+                    axios.get(url)
                     // axios.get('https://api.jsonbin.io/b/5cab36508b8d1301a25bd8fa/1/')
 
                     .then(response => {
@@ -208,7 +208,7 @@ var app = new Vue({
             var axiosHeaders = { headers: { 'secret-key': token }};
 
             for (var i = 0; i < 5; i++) {
-                axios.get(url2)
+                axios.get(url)
 
                 .then(response => {
                     // console.log(response.data.cards);
