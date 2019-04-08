@@ -48,11 +48,7 @@
         </div> -->
 
             <div class="container" v-if="guide">
-                <div class="progress-bar" v-if="guide">
-                    <div class="bar" v-bind:class="{ active: q == 1, 'answered': hasAnswer('1') }">1</div>
-                    <div class="bar" v-bind:class="{ active: q == 2, 'answered': hasAnswer('2') }">2</div>
-                    <div class="bar" v-bind:class="{ active: q == 3, 'answered': hasAnswer('3') }">3</div>
-                </div>
+        
 
                <!-- <transition name="toggle">
                     <div class="question q1" v-if="q == 1">
