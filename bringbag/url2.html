@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+    <script src="https://unpkg.com/vue-cookies@1.5.12/vue-cookies.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <title></title>
+
+    <!-- TO DO
+        1. Set cookie when closing tooltip
+        2. Animate in result cards in order
+        3. Create API and loop out GET response
+        4. Filtrering med live uppdatering
+        5. Sök funktion med live uppdatering
+
+    -->
+</head>
+<body>
+    <div id="app" v-cloak>
+        <div class="wrapper">
+        <!-- <div class="c-progressbar js-progressbar">
+    		<span class="c-progressbar__value js-progressbar__value"></span><span class="perc">%</span>
+    		<svg class="c-progress js-progressbar__progress">
+    			<circle class="c-progress__circle c-progress__progress-value" cx="50%" cy="50%" r=".4em" stroke-width="var(--cProgressStrokeWidth)" stroke="var(--cProgressColor)" stroke-linejoin="round" stroke-linecap="round" fill="none"></circle>
+    		</svg>
+            <input type="number" style="display:none;" class="field js-field-value" value="80" min="0" max="100" autofocus required>
+    	</div> -->
+
+        <!-- <transition name="fade">
+            <div class="guide-overlay" v-if="guide"></div>
+        </transition> -->
+
+        <!-- <div class="guide-btn" @click=" guide =! guide">
+            <i class="material-icons" v-if="guide">layers</i>
+            <i class="material-icons" v-if="!guide">close</i>
+
+        </div>
+        <div class="tooltip" v-if="tooltip">
+            <p>Osäker på vilket kreditkort som passar dig bäst?<br> Vår guide hjälper dig!</p>
+            <i @click="tooltip = false, create()" class="material-icons">close</i>
+        </div> -->
+
+            <div class="container" v-if="guide">
+        
+
+               <!-- <transition name="toggle">
+                    <div class="question q1" v-if="q == 1">
+                        <h2>Är det viktigare med mer fördelar på kortet än att kortet har låga avgifter?</h2>
+                    </div>
+                </transition>
+
+                <transition name="toggle">
+                    <div class="question q2" v-if="q == 2">
+                        <h2>Är det viktigt för dig med bra rabatter & bonus vid tankning?</h2>
+                    </div>
+                </transition>
+
+                <transition name="toggle">
+                    <div class="question q2" v-if="q == 3">
+                        <h2>Är det viktigt för dig med bra rabatter & bonus när du handlar mat?</h2>
+                    </div>
+                </transition>-->
+
+                <div class="btn-container">
+
+                    <!-- Q1 -->
+                    <!-- Fråga för att etablera förmån eller kredit -->
+                    <button class="y" v-if="q == 1" @click="q = 2, addAnswer('1', 'mastercard'), getAPI()">Show API</button>
+                  
+                </div>
+
+                <div class="re-do" @mouseover="re = true" @mouseleave="re = false">
+                    <!-- <transition name="fade"><p v-if="re">Börja om</p></transition> -->
+                    <transition name="hoverText"><div v-if="re" class="restore-txt"><p>Börja om</p></div></transition>
+
+                    <i class="material-icons" v-if="q != 1" @click="result = false, re = false, q = 1, clear()">refresh</i>
+                </div>
+
+
+                <transition name="toggle">
+                    <div class="result" v-if="result">
+                            <h2>Baserat på dina svar passar dessa utvalda kort bäst för dig.</h2>
+                    </div>
+                </transition>
+            </div>
+
+
+            <!-- <transition name="api"> -->
+            <div class="card-container" v-if="!cards.length == 0" v-for="card in cards">
+                    <div class="child w30" style="margin-right: 40px;">
+                        <!-- <img :src="card.picture" class="" /> -->
+                        <p class="more-details" v-if="!details" @click="details = true" style="">Visa mer<i class="material-icons">expand_more</i></p>
+                        <p class="more-details" v-if="details" @click="details = false" style="">Visa mindre<i class="material-icons">expand_less</i></p>
+                    </div>
+
+                    <div class="child w70 flex">
+                        <div class="child" style="width: 95%; margin-bottom: 20px;">
+                            <h2>{{ card.name }}</h2>
+                        </div>
+                        <div class="child w40">
+                            <div style="display: flex;"><p style="margin-right: 5px;">Max-credit:</p><p style="font-weight: bold;"> {{ card.type }}</p></div>
+                            <div style="display: flex;"><p style="margin-right: 5px;">Årskostnad:</p><p style="font-weight: bold;"> {{ card.yearlyCost }} kr</p></div>
+                            <div style="display: flex;"><p style="margin-right: 5px;">Kreditränta:</p><p style="font-weight: bold;"> {{ card.interest }} %</p></div>
+                            <div style="display: flex;"><p style="margin-right: 5px;">Räntefritt:</p><p style="font-weight: bold;"> {{ card.interestFree }} dagar</p></div>
+                        </div>
+                        <div class="child w60">
+                            <div v-for="items in card.pros" style="display: flex;"><i class="material-icons">done</i><p style=""> {{ items }}</p></div>
+                        </div>
+                        <div class="child" style="width: 95%; margin-top: 10px; padding-top: 20px; border-top: 1px solid #D0D0D0;">
+                            <button class="cta">Ansök nu!</button>
+                        </div>
+                    </div>
+                    <transition name="api">
+                    <div class="child details-extended" v-if="details" style="width: 93%; margin: auto; margin-top: 25px;">
+                        <div class="">
+                            <h3>MER DETALJER</h3>
+                        </div>
+                        <ul style="border-top: 2px solid #3aaa35;">
+                            <li v-for="(value, key) in card.details"><p style="float: left; text-transform: uppercase;">{{ key }}</p><p style="float: right;">{{ value }}</p></li>
+                        </ul>
+                    </div>
+                    </transition>
+                </div>
+            <!-- </transition> -->
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        q: 1,
+        tooltip: true,
+        answers: [],
+        re: false,
+        guide: true,
+        result: false,
+        details: false,
+        cards: [],
+        filter: false
+    },
+    methods: {
+        scroll(card) {
+            window.onscroll = () => {
+                let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
+
+                if(bottomOfWindow) {
+                    const url = 'https://api.jsonbin.io/b/5cab36508b8d1301a25bd8fa/1/';
+                    const url2 = 'https://randomuser.me/api/';
+                    axios.get(url2)
+                    // axios.get('https://api.jsonbin.io/b/5cab36508b8d1301a25bd8fa/1/')
+
+                    .then(response => {
+                        this.cards.push(response.data.results[0]);
+                        console.log('Added: ', response.data.results[0].name)
+                    })
+                }
+            }
+        },
+        clear() {
+            localStorage.removeItem('1');
+            localStorage.removeItem('2');
+            localStorage.removeItem('3');
+            this.answers = []
+            this.cards = []
+            // console.log(this.answers)
+        },
+        hasAnswer(answer) {
+            return this.answers.indexOf(answer) === -1 ? false : true
+        },
+        addAnswer(question, answer) {
+            this.answers.push(question)
+            localStorage.setItem(question, answer)
+        },
+        create() {
+            this.$cookies.set('cookie_name', 'cookie_value');
+        },
+        getAPI(){
+            // this.cards = []
+            const token = '$2a$10$3x2Jfs.339jW0ib3Yz3hYeYF0txfc0tOPUMDpi7EN46bZ5q0SYxAi';
+            const url = 'https://api.jsonbin.io/b/5cab36508b8d1301a25bd8fa/1/';
+            const url2 = 'https://randomuser.me/api/';
+            const url3 = 'http://localhost:3000/cards';
+
+            var axiosHeaders = { headers: { 'secret-key': token }};
+
+            for (var i = 0; i < 5; i++) {
+                axios.get(url2)
+
+                .then(response => {
+                    // console.log(response.data.cards);
+                    // this.cards.push(response.data.cards[0])
+                    this.cards.push(response.data.results[0]);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+                .then(function () {
+                    // always executed
+                });
+            }
+            console.log(this.cards)
+
+        }
+    },
+    mounted() {
+        this.scroll(this.card)
+    }
+})
+</script>
+
+</html>
