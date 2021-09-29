@@ -1,0 +1,142 @@
+@media only screen and (max-width: 500px){
+   .sidebar {
+      display: none;
+   }
+   .back-end-text, .front-end-text {
+      font-size: 14px;
+   }
+   .portfolio {
+      width: 300px;
+      height: 180px;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      margin-top: 50%;
+   }
+   .link {
+      font-size: 26px;
+   }
+   .thrive {
+      position: absolute;
+      max-width: 90%;
+      top: 40%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+   }
+   .thrive-text {
+      margin-right: 5%;
+      margin-top: 140%;
+      width: 90%;
+   }
+   .section {
+      height: 100vh;
+      width: 100%;
+      max-width: 150%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      position: relative;
+   }
+   #section1 {
+      height: 100vh;
+      width: 100%;;
+      background-image: url("../img/1.jpg");
+   }
+   #section2 {
+      height: 100vh;
+      background-color: white;
+   }
+   #section3 {
+      height: 100vh;
+      background-color: #f2f2f2;
+   }
+   .down-arrow2, .down-arrow3 {
+   display: none;
+   }
+   .header3 {
+      font-size: 24px;
+      top: 8%;
+      color: #5C5C5C;
+   }
+   #section4 {
+      background-color: white;
+   }
+   .header {
+      font-size: 24px;
+      position: absolute;
+      font-weight: bold;
+      top: 8%;
+      left: 55%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+   }
+   .code {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      width: 70px;
+      height: 70px;
+      color: #FFD95F;
+      margin-top: 2%;
+   }
+   .brush {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      width: 70px;
+      height: 70px;
+      color: #FFD95F;
+   }
+   .slideshow-arrow-left {
+      position: absolute;
+      top: 53%;
+      left: 5%;
+      background-size: cover;
+      height: 50px;
+      width: 50px;
+   }
+   .slideshow-arrow-right {
+      position: absolute;
+      top: 53%;
+      right: 5%;
+      background-size: cover;
+      height: 50px;
+      width: 50px;
+   }
+   .logo {
+      width: 50px;
+      height: 50px;
+      position: fixed;
+      top: 1%;
+      left: 2%;
+      z-index: 1;
+   }
+   .front-end {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+   }
+   .back-end {
+      position: absolute;
+      top: 28%;
+      left: 52%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+   }
+   .welcome-text {
+      font-size: 20px;
+
+   }
+   #element {
+      font-size: 20px;
+   }
+}

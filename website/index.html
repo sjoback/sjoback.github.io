@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Joakim Sjöbäck</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="icon" type="image/gif/png" href="img/logo.png">
+   <!-- CSS -->
+   <link href="css/body.css" rel="stylesheet">
+   <link href="css/navigation.css" rel="stylesheet">
+   <link href="css/mediaQ.css" rel="stylesheet">
+
+
+   <link href="css/bouncingarrow.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700,900" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+   <!-- JS -->
+   <script src='js/functions.js'></script>
+
+
+   <!-- JQUERY -->
+   <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+
+
+</head>
+<body>
+   <!-- LOGO -->
+   <img src="img/logo.png" class="logo">
+   <!-- TO-TOP BUTTON -->
+   <div class="up-arrow"></div>
+
+   <!-- SIDEBAR -->
+   <!-- <div class="sidebar">
+   <nav>
+   <ul>
+   <li><a href="#section1" class="dot name-active"><span>Home</span></a></li>
+   <li><a href="#section2" class="dot"><span>experience</span></a></li>
+   <li><a href="#section3" class="dot"><span>projects</span></a></li>
+   <li><a href="#section4" class="dot"><span>contact</span></a></li>
+</ul>
+</nav>
+</div> -->
+
+
+<div class="section" id="section1">
+   <!-- WELCOME TEXT -->
+   <div class="welcome-text">
+      Hi, I'm Joakim. I design & build</br>
+      <p id="element"></p>
+   </div>
+
+   <div class="learn-more">
+      Learn more about what I do
+   </div>
+   <div class="down-arrow"></div>
+   <div class="overlay"></div>
+</div>
+
+
+<!-- Section 2 -->
+<div class="section" id="section2">
+   <div class="header">
+      Experience
+   </div>
+   <img src="img/code.png" class="code">
+   <div class="back-end">
+      <h2>Back-end</h2>
+      <p class="back-end-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+   </div>
+   <img src="img/brush.png" class="brush">
+   <div class="front-end">
+      <h2>Front-end</h2>
+      <p class="front-end-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+   </div>
+   <div class="see-projects"></div>
+   <div class="down-arrow2"></div>
+</div>
+
+
+<!-- Section 3 -->
+<div class="section" id="section3">
+   <div class="header3">
+      Projects
+   </div>
+   <div class="slideshow-arrow-left"></div>
+   <div class="slideshow-arrow-right"></div>
+
+   <div class="thrive">
+      <a href="https://sjoback.github.io/thrive/index.html" target="_blank"><img src="img/thrive.png" class="portfolio"></a>
+      <div class="thrive-text">
+         <a href="http://www.thrivestore.se/" target="_blank" class="link">Thrivestore.se</a>
+         <br>
+         <br>
+         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      </div>
+   </div>
+   <!-- <div class="grey-box"></div> -->
+   <div class="down-arrow3"></div>
+</div>
+
+
+<!-- Section 4 -->
+<div class="section" id="section4">
+   <div class="header">
+      Contact
+   </div>
+   <div class="media-buttons">
+      <div class="facebook">
+         <a href="https://www.facebook.com/joakim.sjoback" target="_blank"><img src="img/facebook.png" class="mediabtn-small"></a>
+         <p class="media-text">Facebook</p>
+      </div>
+      <div class="gmail">
+         <a href="mailto:joakim.sjoback@gmail.com" target="_top"><img src="img/gmail.png" class="mediabtn-big"></a>
+         <p class="media-text">Gmail</p>
+      </div>
+      <div class="linkedin">
+         <a href="https://www.linkedin.com/in/joakim-sj%C3%B6b%C3%A4ck-8089a0110/" target="_blank"><img src="img/linkedin.png" class="mediabtn-small"></a>
+         <p class="media-text">Linkedin</p>
+      </div>
+      <div class="github">
+         <a href="https://github.com/sjoback" target="_blank"><img src="img/github.png" class="mediabtn-big"></a>
+         <p class="media-text">Github</p>
+      </div>
+   </div>
+
+   <div class="grey-box">
+      <footer>
+         <img src="img/logo.png" height="42" width="42">
+         <br>
+         <br>
+         Handmade by me © 2017.</footer>
+   </div>
+
+</div>
+
+</body>
+</html>
+<script>
+// Rotating logo
+$(window).scroll(function() {
+   var theta = $(window).scrollTop() / 643 % Math.PI;
+   $('.logo').css({ transform: 'rotate(' + theta + 'rad)' });
+});
+// Slide in Projects
+
+
+// To top button
+$(".up-arrow").click(function() {
+   $('html,body').animate({
+      scrollTop: $("#section1").offset().top},
+      'slow');
+   });
+
+   // scroll to section 2
+   $(".down-arrow").click(function() {
+      $('html,body').animate({
+         scrollTop: $("#section2").offset().top},
+         'slow');
+      });
+      // scroll to section 3
+      $(".down-arrow2").click(function() {
+         $('html,body').animate({
+            scrollTop: $("#section3").offset().top},
+            'slow');
+         });
+         // scroll to section 4
+         $(".down-arrow3").click(function() {
+            $('html,body').animate({
+               scrollTop: $("#section4").offset().top},
+               'slow');
+            });
+
+
+            // JS typed
+            $('#element').typeIt({
+               speed: 100,
+               autoStart: true
+            })
+
+            .tiType('websites')
+            .tiPause(1000)
+            .tiDelete(8)
+            .tiType('landing pages')
+            .tiPause(1000)
+            .tiDelete(14)
+            .tiType('web applications.')
+            .tiPause(1000)
+         </script>

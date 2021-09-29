@@ -1,0 +1,93 @@
+@import "compass/css3";
+
+@include keyframes(bounce) {
+	0%, 20%, 50%, 80%, 100% {
+		@include transform(translateY(0));
+	}
+	40% {
+		@include transform(translateY(-30px));
+	}
+	60% {
+		@include transform(translateY(-15px));
+	}
+}
+@include keyframes(down) {
+	0%, 20%, 50%, 80%, 100% {
+		@include transform(translateY(0));
+	}
+	40% {
+		@include transform(translateY(-100px));
+	}
+	60% {
+		@include transform(translateY(-5px));
+	}
+}
+.fa {
+	color: white;
+}
+
+.up-arrow {
+	z-index: 1;
+	cursor: pointer;
+	outline: none;
+	position: fixed;
+	bottom: 2%;
+	right: 1%;
+	height: 50px;
+	width: 50px;
+	background-image: url("../img/arrowup.png");
+	background-size: contain;
+}
+.up-arrow:hover{
+	width: 60px;
+	height: 60px;
+	margin-left:-5px;
+}
+
+.down-arrow:hover,
+.down-arrow2:hover,
+.down-arrow3:hover {
+	width: 60px;
+	height: 60px;
+	margin-left:-25px;
+}
+
+.down-arrow2, .down-arrow3 {
+	z-index: 1;
+	color: black;
+	cursor: pointer;
+	outline: none;
+	position: absolute;
+	bottom: 0%;
+	left: 50%;
+	margin-left:-20px;
+	width: 50px;
+	height: 50px;
+	background-image: url("../img/downarrow1.png");
+	background-size: contain;
+	/*-webkit-animation: down 2s infinite ease-in-out;*/
+}
+.down-arrow {
+	z-index: 1;
+	cursor: pointer;
+	outline: none;
+	position: absolute;
+	bottom: 2%;
+	left: 50%;
+	margin-left:-20px;
+	width: 40px;
+	height: 40px;
+	background-image: url("../img/downarrow.png");
+	background-size: contain;
+	-webkit-animation: bounce 2s infinite ease-in-out;
+}
+@-webkit-keyframes bounce {
+	0%, 20%, 60%, 100%  { -webkit-transform: translateY(0); }
+	40%  { -webkit-transform: translateY(-20px); }
+	80% { -webkit-transform: translateY(-10px); }
+}
+@-webkit-keyframes totop {
+	0%, 20%, 60%, 100%  { -webkit-transform: translateY(0); }
+	40%  { -webkit-transform: translateY(-5px); }
+	80% { -webkit-transform: translateY(-2px); }
+}
